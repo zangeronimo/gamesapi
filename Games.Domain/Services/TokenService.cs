@@ -3,10 +3,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using api.Models;
+using Games.Domain.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace api.Services
+namespace Games.Domain.Services
 {
     public class TokenService
     {

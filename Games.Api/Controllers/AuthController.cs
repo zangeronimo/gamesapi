@@ -1,13 +1,11 @@
 using System.Linq;
-using api.Data;
-using api.DTO;
-using api.Models;
-using api.Services;
+using Games.Api.Data;
+using Games.Api.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace api.Controllers
+namespace Games.Api.Controllers
 {
     [ApiController]
     public class AuthController : Controller

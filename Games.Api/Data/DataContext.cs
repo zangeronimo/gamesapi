@@ -1,7 +1,6 @@
-using api.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace api.Data
+namespace Games.Api.Data
 {
     public class DataContext : DbContext
     {
