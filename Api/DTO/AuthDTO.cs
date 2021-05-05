@@ -1,4 +1,6 @@
-namespace Games.Api.DTO
+using Domain.Models;
+
+namespace Api.DTO
 {
     public class AuthDTO
     {

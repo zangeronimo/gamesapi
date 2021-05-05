@@ -1,4 +1,4 @@
-namespace Games.Domain.Models
+namespace Domain.Models
 {
     public class AuthRequest
     {

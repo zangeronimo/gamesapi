@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Games.Domain.Models
+namespace Domain.Models
 {
     [Table("users")]
     public class User

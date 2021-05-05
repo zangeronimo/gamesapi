@@ -1,6 +1,7 @@
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Games.Api.Data
+namespace Api.Data
 {
     public class DataContext : DbContext
     {
