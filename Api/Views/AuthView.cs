@@ -1,8 +1,8 @@
 using Domain.Models;
 
-namespace Api.DTO
+namespace Api.Views
 {
-    public class AuthDTO
+    public class AuthView
     {
         public UserView user { get; set; }
         public string token { get; set; }

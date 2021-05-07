@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data;
-using Api.DTO;
+using Api.Views;
 using Domain.Models;
 using Domain.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +23,7 @@ namespace Api.Controllers
 
         [HttpPost]
         [Route("v1/auth")]
-        public ActionResult<AuthDTO> Authenticate(
+        public ActionResult<AuthView> Authenticate(
             [FromServices] DataContext context,
             [FromBody] AuthRequest model)
         {
@@ -46,7 +46,7 @@ namespace Api.Controllers
                 var token = TokenService.GenerateToken(user, Configuration.GetConnectionString("Secret"));
 
                 // Retorna os dados
-                return new AuthDTO() { user = new UserView(user), token = token };
+                return new AuthView() { user = new UserView(user), token = token };
             }
             var e = new Exception("Login inválido");
             return BadRequest(e.Message);
