@@ -18,6 +18,8 @@ namespace Domain.Models
         [MaxLength(150, ErrorMessage = "Este campo deve conter entre 3 e 150 caracteres")]
         public string Email { get; set; }
 
+        public string Password { get; set; }
+
         [Column("created_at")]
         public DateTime? CreatedAt { get; set; }
 
