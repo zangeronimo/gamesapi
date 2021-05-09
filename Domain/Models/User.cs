@@ -1,29 +1,25 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Domain.Models
 {
-    [Table("users")]
-    public class User
+    public class User : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
+        public User(string name, string email, string password)
+        {
+            Name = name;
+            Email = email;
+            Password = password;
+        }
 
-        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 150 caracteres")]
-        [MaxLength(150, ErrorMessage = "Este campo deve conter entre 3 e 150 caracteres")]
-        public string Name { get; set; }
+        public void Update(string name, string email, string password)
+        {
+            Name = name;
+            Email = email;
+            Password = password;
+        }
 
-        [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 150 caracteres")]
-        [MaxLength(150, ErrorMessage = "Este campo deve conter entre 3 e 150 caracteres")]
-        public string Email { get; set; }
+        public string Name { get; private set; }
 
-        public string Password { get; set; }
+        public string Email { get; private set; }
 
-        [Column("created_at")]
-        public DateTime? CreatedAt { get; set; }
-
-        [Column("updated_at")]
-        public DateTime? UpdatedAt { get; set; }
+        public string Password { get; private set; }
     }
 }

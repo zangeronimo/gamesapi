@@ -1,6 +1,6 @@
 using Domain.Models;
 
-namespace Api.Views
+namespace Domain.Views
 {
     public class AuthView
     {

@@ -1,4 +1,4 @@
-namespace Domain.Services
+namespace Api.Services
 {
     public class HashingOptions
     {

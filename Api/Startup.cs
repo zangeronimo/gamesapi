@@ -1,5 +1,6 @@
 using System.Text;
-using Api.Data;
+using Domain.Services;
+using Infra.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +48,9 @@ namespace Api
                     ValidateAudience = false
                 };
             });
+
+            // DI Services
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,7 @@
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Api.Data
+namespace Infra.Context
 {
     public class DataContext : DbContext
     {
@@ -10,6 +10,6 @@ namespace Api.Data
         {
         }
 
-        public DbSet<User> users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
