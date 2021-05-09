@@ -5,7 +5,7 @@ using System.Text;
 using Domain.Models;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Api.Services
+namespace Infra.Providers
 {
     public class TokenService
     {

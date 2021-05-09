@@ -10,6 +10,6 @@ namespace Infra.Context
         {
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> users { get; set; }
     }
 }

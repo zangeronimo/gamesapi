@@ -5,7 +5,7 @@ using Domain.Models;
 
 namespace Domain.Services
 {
-    public class UserService : IUserService
+    public class UserService
     {
         private readonly IRepository<User> _userRepository;
 

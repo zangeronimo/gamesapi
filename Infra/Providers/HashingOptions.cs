@@ -1,4 +1,4 @@
-namespace Api.Services
+namespace Infra.Providers
 {
     public class HashingOptions
     {

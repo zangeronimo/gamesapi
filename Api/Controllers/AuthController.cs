@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using Api.Services;
 using Domain.Models;
 using Domain.Views;
 using Infra.Context;
+using Infra.Providers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +27,7 @@ namespace Api.Controllers
             [FromBody] AuthRequest model)
         {
             // Recupera o usuário
-            var userQuery = context.Users.AsQueryable();
+            var userQuery = context.users.AsQueryable();
 
             User user = userQuery
                 .Where(x => x.Email.ToLower().Contains(model.Email)).First();

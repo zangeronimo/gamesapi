@@ -1,9 +1,10 @@
 using System;
 using System.Linq;
 using System.Security.Cryptography;
+using Domain.Interfaces;
 using Microsoft.Extensions.Options;
 
-namespace Api.Services
+namespace Infra.Providers
 {
 
     public sealed class PasswordHasher : IPasswordHasher
