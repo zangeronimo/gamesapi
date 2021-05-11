@@ -14,7 +14,7 @@ namespace Domain.Services
             _userRepository = userRepository;
         }
 
-        public IEnumerable<User> Executar(string filter)
+        public IEnumerable<User> Execute(string filter)
         {
             try
             {

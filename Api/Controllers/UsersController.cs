@@ -25,7 +25,7 @@ namespace Api.Controllers
         [Authorize]
         public IEnumerable<UserView> Get([FromQuery(Name = "filter")] string filter)
         {
-            var users = _userRepository.GetAll();
+            var users = _userService.Execute(filter);
             return users.Select(d => new UserView(d));
         }
         /*
