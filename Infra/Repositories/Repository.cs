@@ -35,9 +35,23 @@ namespace Infra.Repositories
             return null;
         }
 
-        public virtual void Save(T entity)
+        public virtual void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+        }
+
+        public virtual void Update(T entity)
+        {
+            _context.Set<T>().Update(entity);
+        }
+
+        public virtual void Remove(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+        }
+        public virtual void Save()
+        {
+            _context.SaveChanges();
         }
     }
 }

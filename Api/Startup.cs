@@ -3,6 +3,7 @@ using Domain.Interfaces;
 using Domain.Models;
 using Domain.Services;
 using Infra.Context;
+using Infra.Providers;
 using Infra.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -55,8 +56,13 @@ namespace Api
             // DI Services
             services.AddScoped(typeof(IRepository<User>), typeof(UserRepository));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(UserService));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddScoped(typeof(IPasswordHasher), typeof(PasswordHasher));
+
+            services.AddScoped(typeof(ShowUserService));
+            services.AddScoped(typeof(AddUserService));
+            services.AddScoped(typeof(UpdateUserService));
+            services.AddScoped(typeof(DeleteUserService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

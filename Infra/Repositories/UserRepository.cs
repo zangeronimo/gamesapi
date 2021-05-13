@@ -12,7 +12,7 @@ namespace Infra.Repositories
 
         public override User GetById(int id)
         {
-            var query = _context.Set<User>().Where(e => e.Id == id);
+            var query = _context.Set<User>().Where(e => e.Deleted_at == null).Where(e => e.Id == id);
 
             if (query.Any())
                 return query.First();
@@ -22,7 +22,7 @@ namespace Infra.Repositories
 
         public override IEnumerable<User> GetAll()
         {
-            var query = _context.Set<User>();
+            var query = _context.Set<User>().Where(e => e.Deleted_at == null);
 
             return query.Any() ? query.ToList() : new List<User>();
         }

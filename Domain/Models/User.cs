@@ -9,10 +9,29 @@ namespace Domain.Models
             Password = password;
         }
 
-        public void Update(string name, string email, string password)
+        public bool IsValid
+        {
+            get
+            {
+                return
+                    Name.Length > 3 && Name.Length <= 150 &&
+                    Email.Length > 3 && Email.Length <= 150 &&
+                    !string.IsNullOrEmpty(Password);
+            }
+        }
+
+        public void setName(string name)
         {
             Name = name;
+        }
+
+        public void setEmail(string email)
+        {
             Email = email;
+        }
+
+        public void setPassword(string password)
+        {
             Password = password;
         }
 
