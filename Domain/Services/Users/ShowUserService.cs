@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Domain.Interfaces;
 using Domain.Models;
 
-namespace Domain.Services
+namespace Domain.Services.Users
 {
     public class ShowUserService
     {
@@ -16,16 +16,9 @@ namespace Domain.Services
 
         public IEnumerable<User> Execute(string filter)
         {
-            try
-            {
-                var users = _userRepository.GetAll();
+            var users = _userRepository.GetAll();
 
-                return users;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            return users;
         }
     }
 }

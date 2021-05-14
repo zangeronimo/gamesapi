@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Domain.Interfaces;
 using Domain.Models;
-using Domain.Services;
+using Domain.Views;
+using Domain.Services.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,16 +18,13 @@ namespace Api.Controllers
         private readonly AddUserService _addUserService;
         private readonly UpdateUserService _updateUserService;
         private readonly DeleteUserService _deleteUserService;
-        private readonly IRepository<User> _userRepository;
 
         public UsersController(
             ShowUserService showUserService,
             AddUserService addUserService,
             UpdateUserService updateUserService,
-            DeleteUserService deleteUserService,
-            IRepository<User> userRepository)
+            DeleteUserService deleteUserService)
         {
-            _userRepository = userRepository;
             _showUserService = showUserService;
             _addUserService = addUserService;
             _updateUserService = updateUserService;

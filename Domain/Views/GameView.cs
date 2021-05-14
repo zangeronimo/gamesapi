@@ -1,4 +1,6 @@
-namespace Domain.Models
+using Domain.Models;
+
+namespace Domain.Views
 {
     public class UserView
     {

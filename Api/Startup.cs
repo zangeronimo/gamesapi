@@ -1,7 +1,8 @@
 using System.Text;
 using Domain.Interfaces;
 using Domain.Models;
-using Domain.Services;
+using Domain.Services.Users;
+using Domain.Services.Games;
 using Infra.Context;
 using Infra.Providers;
 using Infra.Repositories;
@@ -55,6 +56,7 @@ namespace Api
 
             // DI Services
             services.AddScoped(typeof(IRepository<User>), typeof(UserRepository));
+            services.AddScoped(typeof(IRepository<Game>), typeof(GameRepository));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(IPasswordHasher), typeof(PasswordHasher));
@@ -63,6 +65,11 @@ namespace Api
             services.AddScoped(typeof(AddUserService));
             services.AddScoped(typeof(UpdateUserService));
             services.AddScoped(typeof(DeleteUserService));
+
+            services.AddScoped(typeof(ReadGameService));
+            services.AddScoped(typeof(CreateGameService));
+            services.AddScoped(typeof(UpdateGameService));
+            services.AddScoped(typeof(DeleteGameService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
